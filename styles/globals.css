@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
+/* Define CSS variables */
+:root {
+  --color-light-bg: #f8fafc;
+  --color-light-text: #1f2937;
+  --color-dark-bg: #1a202c;
+  --color-dark-text: #f8fafc;
+}
+
+/* Apply colors using @apply */
+body {
+  @apply bg-[var(--color-light-bg)] text-[var(--color-light-text)];
+}
+
+.dark body {
+  @apply bg-[var(--color-dark-bg)] text-[var(--color-dark-text)];
+}
