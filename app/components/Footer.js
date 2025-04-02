@@ -2,7 +2,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaCcVisa, FaCcMastercar
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText py-12 transition-colors duration-300 border-t border-gray-700/20">
+    <footer className="w-full bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText py-12 border-t border-gray-700/20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {/* Company Branding */}
@@ -47,7 +47,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="px-4 py-2 w-full rounded-l-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200"
               />
-              <button className="px-4 py-2 bg-purple-600 text-white rounded-r-lg hover:bg-purple-700 transition">
+              <button className="px-4 py-2 bg-purple-600 text-white rounded-r-lg hover:bg-purple-700 ">
                 Subscribe
               </button>
             </form>
@@ -61,16 +61,16 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Social Media */}
           <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 ">
               <FaFacebook className="text-xl" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
               <FaTwitter className="text-xl" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
               <FaInstagram className="text-xl" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400">
               <FaLinkedin className="text-xl" />
             </a>
           </div>

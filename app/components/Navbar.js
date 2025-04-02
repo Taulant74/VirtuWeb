@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, memo } from "react";
-import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 
-function Navbar() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { darkMode, setDarkMode } = useTheme();
@@ -18,97 +18,55 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (!isScrolled) {
+    return null; // Do not render the navbar if not scrolled
+  }
+
   return (
     <nav
-      className={`sticky top-0 z-5000 bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)]text-lightText dark:text-darkText transition-colors duration-50 ${
-        isScrolled ? "h-12 shadow-md" : "h-16"
-        
-      }`}
+      className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 
+                  px-6 py-3 flex items-center justify-center gap-6 
+                  rounded-full transition-all duration-300 shadow-lg
+                  bg-darkBackground/70 backdrop-blur-md`}
     >
-      <div className="container mx-auto flex items-center justify-between h-full px-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold">VirtuPath AI</div>
-
-        {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-6 items-center">
-          <a href="#home" className="hover:text-purple-400 ">
-            Home
+      {/* Desktop Navigation Links */}
+      <div className="hidden md:flex space-x-6">
+        {["About", "Projects", "Testimonials", "Contact"].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className="text-gray-200 hover:text-purple-400 transition font-medium"
+          >
+            {item}
           </a>
-          <a href="#about" className="hover:text-purple-400 ">
-            About
-          </a>
-          <a href="#services" className="hover:text-purple-400">
-            Services
-          </a>
-          <a href="#contact" className="hover:text-purple-400 ">
-            Contact
-          </a>
-
-          {/* Theme Toggle Button */}
-          <button
-            onClick={() => setDarkMode((prevMode) => !prevMode)}
-            className="ml-4 p-2 rounded-full text-gray-800 dark:text-gray-200 "
-            >
-            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-400" />}
-          </button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl focus:outline-none "
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        ))}
       </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-2xl text-gray-200 focus:outline-none"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText transition-all duration-150 ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed top-20 left-1/2 transform -translate-x-1/2 w-60 bg-darkBackground rounded-xl
+                    p-5 flex flex-col space-y-4 transition-transform duration-300 shadow-xl
+                    ${isMenuOpen ? "scale-100 opacity-100" : "scale-90 opacity-0 pointer-events-none"}`}
       >
-        <div className="flex flex-col items-center space-y-4 py-4">
+        {["About", "Projects", "Testimonials", "Contact"].map((item) => (
           <a
-            href="#home"
-            className="hover:text-purple-400 transition-colors duration-100"
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className="text-gray-200 hover:text-purple-400 transition text-lg"
             onClick={() => setIsMenuOpen(false)}
           >
-            Home
+            {item}
           </a>
-          <a
-            href="#about"
-            className="hover:text-purple-400 transition-colors duration-100"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </a>
-          <a
-            href="#services"
-            className="hover:text-purple-400 transition-colors duration-100"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="hover:text-purple-400 transition-colors duration-100"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </a>
-
-          {/* Mobile Theme Toggle */}
-          <button
-            onClick={() => setDarkMode((prevMode) => !prevMode)}
-            className="p-2 rounded-full text-gray-800 dark:text-gray-100 transition-colors duration-100"
-          >
-            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-400" />}
-          </button>
-        </div>
+        ))}
       </div>
     </nav>
   );
 }
-
-export default memo(Navbar);
