@@ -22,7 +22,7 @@ export default function Breakdown() {
   ];
 
   return (
-    <section className="w-full py-24 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText transition-colors duration-100 border-t border-purple-500/30">
+    <section className="w-full py-24 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText border-t border-purple-500/30">
       <div className="container mx-auto text-center px-6">
         <h2 className="text-5xl font-extrabold mb-12 tracking-tight">How It Works</h2>
         
@@ -30,7 +30,7 @@ export default function Breakdown() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="p-10 rounded-xl shadow-md dark:shadow-lg transform hover:-translate-y-2 transition duration-150 dark:hover:shadow-purple-500/40 hover:shadow-purple-300/40 border border-gray-200 dark:border-gray-700 bg-lightBackground dark:bg-darkBackground backdrop-blur-lg"
+              className="p-10 rounded-xl shadow-md dark:shadow-lg transform hover:-translate-y-2 dark:hover:shadow-purple-500/40 hover:shadow-purple-300/40 border border-gray-200 dark:border-gray-700 bg-lightBackground dark:bg-darkBackground backdrop-blur-lg"
             >
               {/* Icon Wrapper */}
               <div className="flex justify-center mb-6">

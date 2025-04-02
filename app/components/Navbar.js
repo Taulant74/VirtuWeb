@@ -31,23 +31,23 @@ function Navbar() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="#home" className="hover:text-purple-400 transition-colors duration-150">
+          <a href="#home" className="hover:text-purple-400 ">
             Home
           </a>
-          <a href="#about" className="hover:text-purple-400 transition-colors duration-150">
+          <a href="#about" className="hover:text-purple-400 ">
             About
           </a>
-          <a href="#services" className="hover:text-purple-400 transition-colors duration-150">
+          <a href="#services" className="hover:text-purple-400">
             Services
           </a>
-          <a href="#contact" className="hover:text-purple-400 transition-colors duration-150">
+          <a href="#contact" className="hover:text-purple-400 ">
             Contact
           </a>
 
           {/* Theme Toggle Button */}
           <button
             onClick={() => setDarkMode((prevMode) => !prevMode)}
-            className="ml-4 p-2 rounded-full text-gray-800 dark:text-gray-200 transition-colors duration-150"
+            className="ml-4 p-2 rounded-full text-gray-800 dark:text-gray-200 "
             >
             {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-400" />}
           </button>
@@ -55,7 +55,7 @@ function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl focus:outline-none transition-colors duration-100"
+          className="md:hidden text-2xl focus:outline-none "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}

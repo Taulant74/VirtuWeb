@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <section className="w-full py-24 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText transition-colors duration-300">
+    <section className="w-full py-24 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Column: Image */}
         <div className="flex justify-center">
@@ -11,7 +11,7 @@ export default function AboutUs() {
             alt="About Us"
             width={500}
             height={300}
-            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="rounded-lg shadow-lg hover:shadow-xl"
           />
         </div>
 
