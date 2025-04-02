@@ -20,8 +20,9 @@ function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText transition-colors duration-150 ${
+      className={`sticky top-0 z-5000 bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)]text-lightText dark:text-darkText transition-colors duration-50 ${
         isScrolled ? "h-12 shadow-md" : "h-16"
+        
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-full px-4">
@@ -30,16 +31,16 @@ function Navbar() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="#home" className="hover:text-purple-400 transition-colors duration-300">
+          <a href="#home" className="hover:text-purple-400 transition-colors duration-150">
             Home
           </a>
-          <a href="#about" className="hover:text-purple-400 transition-colors duration-280">
+          <a href="#about" className="hover:text-purple-400 transition-colors duration-150">
             About
           </a>
-          <a href="#services" className="hover:text-purple-400 transition-colors duration-250">
+          <a href="#services" className="hover:text-purple-400 transition-colors duration-150">
             Services
           </a>
-          <a href="#contact" className="hover:text-purple-400 transition-colors duration-220">
+          <a href="#contact" className="hover:text-purple-400 transition-colors duration-150">
             Contact
           </a>
 

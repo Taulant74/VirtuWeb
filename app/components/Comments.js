@@ -22,10 +22,19 @@ export default function Comments() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 border rounded-lg bg-lightBackground dark:bg-darkBackground shadow-lg"
+              className="p-6 border rounded-lg bg-lightBackground dark:bg-darkBackground shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <p className="text-lg italic mb-4">&quot;{testimonial.feedback}&quot;</p>
-              <h3 className="text-xl font-semibold">{testimonial.name}</h3>
+              <p className="text-lg italic mb-4 text-black-700 dark:text-black-150">
+                &quot;{testimonial.feedback}&quot;
+              </p>
+              <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400">
+                {testimonial.name}
+              </h3>
+              <div className="mt-4 flex justify-center">
+                <div className="w-12 h-12 rounded-full bg-purple-200 dark:bg-purple-700 flex items-center justify-center text-purple-600 dark:text-purple-200 font-bold">
+                  {testimonial.name.charAt(0)}
+                </div>
+              </div>
             </div>
           ))}
         </div>

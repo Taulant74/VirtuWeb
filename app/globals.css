@@ -2,19 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 @import "tailwindcss";
+
 /* Define CSS variables */
 :root {
-  --color-light-bg: #f8fafc;
-  --color-light-text: #1f2937;
-  --color-dark-bg: #1a202c;
+  --color-light-bg: #ffffff;
+  --color-light-text: #0f151d;
+  --color-dark-bg: #1a1a1a;
   --color-dark-text: #f8fafc;
 }
 
-/* Apply colors using @apply */
+/* Apply colors without transitions */
 body {
   @apply bg-[var(--color-light-bg)] text-[var(--color-light-text)];
 }
 
 .dark body {
   @apply bg-[var(--color-dark-bg)] text-[var(--color-dark-text)];
+}
+nav {
+  background: var(--color-light-bg);
+}
+
+.dark nav {
+  background: var(--color-dark-bg);
+}
+
+
+/* Remove transitions for instant theme changes */
+body,
+.dark body {
+  transition: none;
 }
