@@ -29,7 +29,7 @@ export default function Breakdown() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-lightBackground dark:bg-darkBackground p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+              className="bg-lightBackground dark:bg-darkBackground p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105"
             >
               <div className="flex justify-center mb-6">{step.icon}</div>
               <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>

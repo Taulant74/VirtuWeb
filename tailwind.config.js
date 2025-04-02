@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", // Include all files in the app directory
     "./components/**/*.{js,ts,jsx,tsx}", // Include all files in the components directory
-    "./app/globals.css" // Include the global CSS file
+    "./app/globals.css", // Include the global CSS file
   ],
   theme: {
     extend: {

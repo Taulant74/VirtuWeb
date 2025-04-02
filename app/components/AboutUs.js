@@ -7,11 +7,11 @@ export default function AboutUs() {
         {/* Left Column: Image */}
         <div className="flex justify-center">
           <Image
-            src="/images/about-us.jpg"
+            src="/images/im1.jpg"
             alt="About Us"
             width={500}
             height={300}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           />
         </div>
 
